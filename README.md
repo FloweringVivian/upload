@@ -1,7 +1,11 @@
-# upload
-H5 fileReader对象实现图片上传（支持一次上传多张图片），并用canvas进行前端压缩<br>
-首先页面布局的代码是这样的<br>
+upload
+======
+H5 fileReader对象实现图片上传（支持一次上传多张图片），并用canvas进行前端压缩
+------
+首先页面布局的代码是这样的
+------
 将type="file"的input绝对定位到上传图片的图标上，并且将opacity设置为0，即可实现样式效果，accept="image/*" 代表会打开图库或者照相机，multiple代表可支持一次上传多张图片，具体代码如下，详细见源代码upload/upload.html，upload/css/my.css
+
 ```javascript
 <!-- 上传图片 start -->
 <div class="car-sale">
@@ -19,8 +23,9 @@ H5 fileReader对象实现图片上传（支持一次上传多张图片），并�
 </div>
 <!-- 上传图片 end -->
 ```
-<br>
-<br>上传图片的js代码实现部分请见upload/js/upload.js，主要借助了h5的fileReader对象以及canvas进行前端压缩后再将参数转化为base64位编码格式传给后台，避免图片过大造成服务器的压力，具体代码详解请见如下代码注释部分。<br>
+
+上传图片的js代码实现部分请见upload/js/upload.js，主要借助了h5的fileReader对象以及canvas进行前端压缩后再将参数转化为base64位编码格式传给后台，避免图片过大造成服务器的压力，具体代码详解请见如下代码注释部分。
+
 ```javascript
 var picList = [];  //上传图片地址
 $('#file_upload').change(function(){  
@@ -41,7 +46,9 @@ $('#file_upload').change(function(){
 	})
 });
 ```
-<br>图片上传部分代码如下：
+
+图片上传部分代码如下：
+
 ```javascript
 fileReader.onload = function(event){  
 	var result = event.target.result;   //返回的dataURL  
@@ -86,4 +93,5 @@ fileReader.onload = function(event){
 	}); 
 } 
 ```
-<br>注意：使用时把接口地址改成你的接口地址即可查看效果
+
+注意：使用时把接口地址改成你的接口地址即可查看效果
