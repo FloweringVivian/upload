@@ -1,9 +1,9 @@
 upload
 ======
 H5 fileReader对象实现图片上传（支持一次上传多张图片），并用canvas进行前端压缩
-------
+
 首先页面布局的代码是这样的
-------
+
 将type="file"的input绝对定位到上传图片的图标上，并且将opacity设置为0，即可实现样式效果，accept="image/*" 代表会打开图库或者照相机，multiple代表可支持一次上传多张图片，具体代码如下，详细见源代码upload/upload.html，upload/css/my.css
 
 ```javascript
