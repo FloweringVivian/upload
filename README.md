@@ -95,3 +95,5 @@ fileReader.onload = function(event){
 ```
 
 注意：使用时把接口地址改成你的接口地址即可查看效果
+
+
