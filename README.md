@@ -4,7 +4,7 @@ H5 fileReader对象实现图片上传（支持一次上传多张图片），并�
 
 首先页面布局的代码是这样的
 
-将type="file"的input绝对定位到上传图片的图标上，并且将opacity设置为0，即可实现样式效果，multiple代表可支持一次上传多张图片，accept="image/*" 代表会打开图库或者照相机，但是在Chrome和Safari等Webkit浏览器下却出现了响应滞慢的问题，可能要等 6~10s 才能弹出文件选择对话框，简直不能忍呀。在IE和Firefox中使用 accept=”image/*” 属性则没有发现响应延迟的问题，于是几经尝试后，发现是 accept=”image/*” 属性的问题，删掉它或者将 * 通配符修改为指定的MIME类型，就可以解决Webkit浏览器下的对话框显示滞慢的问题。解决办法是accept="image/gif,image/jpeg,image/jpg,image/png,image/svg"，具体代码如下，详细见源代码upload/upload.html，upload/css/my.css
+将type="file"的input绝对定位到上传图片的图标上，并且将opacity设置为0，即可实现样式效果，multiple代表可支持一次上传多张图片，accept="image/\*" 代表会打开图库或者照相机，但是在Chrome和Safari等Webkit浏览器下却出现了响应滞慢的问题，可能要等 6~10s 才能弹出文件选择对话框，简直不能忍呀。在IE和Firefox中使用 accept="image/\*" 属性则没有发现响应延迟的问题，于是几经尝试后，发现是 accept="image/\*" 属性的问题，删掉它或者将 * 通配符修改为指定的MIME类型，就可以解决Webkit浏览器下的对话框显示滞慢的问题。解决办法是accept="image/gif,image/jpeg,image/jpg,image/png,image/svg"，具体代码如下，详细见源代码upload/upload.html，upload/css/my.css
 
 ```javascript
 <!-- 上传图片 start -->
